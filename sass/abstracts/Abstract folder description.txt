@@ -1,0 +1,2 @@
+In this folder we are only going to put code that's not going to output anu css
+for Exemple: Variables, Mixins, Array, Functions etc..

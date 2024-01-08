@@ -1,0 +1,21 @@
+/* This file will be for the real low level basics,
+ such as resets and styles for the HTML and BODY elements*/
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  /* inherite from body -- better practice to inherit the box-sizing , like so */
+  box-sizing: inherit;
+}
+
+/* the root font size is set in the html el , this defines what is the value of 1 rem */
+/* (10 * 100) / 16 = 62.5% */
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+}
