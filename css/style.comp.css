@@ -142,3 +142,87 @@ body {
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%); }
+
+.grid-test {
+  display: grid;
+  grid-template-columns: 1fr [col-start] minmax(min-content, 80vw) [col-end] 1fr;
+  grid-template-rows: repeat(6, [row-start] minmax(min-content, max-content) [row-end]);
+  row-gap: 5rem; }
+
+.row {
+  display: grid;
+  grid-column: col-start / col-end; }
+  .row__1 {
+    grid-template-columns: repeat(13, [col-start] 1fr [col-end]);
+    grid-row: row-start / row-end; }
+    .row__1 > * {
+      background-color: red;
+      padding: 2rem;
+      color: white; }
+    .row__1-col-1 {
+      grid-column: col-start / col-end 6; }
+    .row__1-col-2 {
+      grid-column: col-start 8 / col-end 13; }
+  .row__2 {
+    grid-template-columns: repeat(14, [col-start] 1fr [col-end]);
+    grid-row: row-start 2 / row-end 2; }
+    .row__2 > * {
+      padding: 2rem;
+      color: white;
+      background-color: blue; }
+    .row__2-col-1 {
+      grid-column: col-start / col-end 4; }
+    .row__2-col-2 {
+      grid-column: col-start 6 / col-end 9; }
+    .row__2-col-3 {
+      grid-column: col-start 11 / col-end 14; }
+  .row__3 {
+    grid-template-columns: repeat(14, [col-start] 1fr [col-end]);
+    grid-row: row-start 3 / row-end 3; }
+    .row__3 > * {
+      padding: 2rem;
+      color: white;
+      background-color: aqua; }
+    .row__3-col-1 {
+      grid-column: col-start / col-end 4; }
+    .row__3-col-2 {
+      grid-column: col-start 6 / col-end 14; }
+  .row__4 {
+    grid-template-columns: repeat(15, [col-start] 1fr [col-end]);
+    grid-row: row-start 4 / row-end 4; }
+    .row__4 > * {
+      padding: 2rem;
+      color: white;
+      background-color: violet; }
+    .row__4-col-1 {
+      grid-column: col-start / col-end 3; }
+    .row__4-col-2 {
+      grid-column: col-start 5 / col-end 7; }
+    .row__4-col-3 {
+      grid-column: col-start 9 / col-end 11; }
+    .row__4-col-4 {
+      grid-column: col-start 13 / col-end 15; }
+  .row__5 {
+    grid-template-columns: repeat(15, [col-start] 1fr [col-end]);
+    grid-row: row-start 5 / row-end 5; }
+    .row__5 > * {
+      padding: 2rem;
+      color: white;
+      background-color: brown; }
+    .row__5-col-1 {
+      grid-column: col-start / col-end 3; }
+    .row__5-col-2 {
+      grid-column: col-start 5 / col-end 7; }
+    .row__5-col-3 {
+      grid-column: col-start 9 / col-end 15; }
+  .row__6 {
+    grid-template-columns: repeat(15, [col-start] 1fr [col-end]);
+    grid-row: row-start 6 / row-end 6; }
+    .row__6 > * {
+      padding: 2rem;
+      color: white;
+      background-color: green; }
+    .row__6-col-1 {
+      grid-column: col-start / col-end 3; }
+    .row__6-col-2 {
+      grid-column: col-start 5 / col-end 15; }
