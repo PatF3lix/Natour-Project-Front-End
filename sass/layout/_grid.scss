@@ -1,13 +1,13 @@
 .grid-test {
   display: grid;
   grid-template-columns:
-    1fr [col-start] minmax(min-content, 80vw)
-    [col-end] 1fr;
+    [col-start] minmax(min-content, $grid-max-width)
+    [col-end];
   grid-template-rows: repeat(
     6,
     [row-start] minmax(min-content, max-content) [row-end]
   );
-  row-gap: 5rem;
+  row-gap: $grid-row-gap;
 }
 
 .row {

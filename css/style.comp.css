@@ -79,6 +79,32 @@ body {
     animation-duration: 3s;
     animation-timing-function: ease-out; }
 
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  display: inline-block;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.2s; }
+  .heading-secondary:hover {
+    transform: skewY(-2deg) skewX(15deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
+
+.u-center-text {
+  text-align: center; }
+
+.u-margin-bottom-8 {
+  margin-bottom: 8rem; }
+
+.section-about {
+  background-color: #f7f7f7;
+  padding: 25rem 0;
+  margin-top: -20vh;
+  grid-column: col-start / col-end; }
+
 .btn {
   /* the translate is always in relative to the initial state: &:link */ }
   .btn:link, .btn:visited {
@@ -145,7 +171,7 @@ body {
 
 .grid-test {
   display: grid;
-  grid-template-columns: 1fr [col-start] minmax(min-content, 80vw) [col-end] 1fr;
+  grid-template-columns: [col-start] minmax(min-content, 100vw) [col-end];
   grid-template-rows: repeat(6, [row-start] minmax(min-content, max-content) [row-end]);
   row-gap: 5rem; }
 
