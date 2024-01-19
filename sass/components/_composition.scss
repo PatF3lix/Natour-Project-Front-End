@@ -2,10 +2,11 @@
   grid-column: 2 / 3;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min-content, 5vw));
-  grid-template-rows: repeat(auto-fill, minmax(min-content, 4vw));
+  grid-template-rows: repeat(6, minmax(min-content, 4vw));
+  position: relative;
 
   &__item-1 {
-    grid-row: 1 / span 3;
+    grid-row: 1 / span 4;
     grid-column: 1 / span 4;
     z-index: 1;
     &:hover {
@@ -14,7 +15,7 @@
   }
 
   &__item-2 {
-    grid-row: 2 / span 3;
+    grid-row: 2 / span 4;
     grid-column: 4 / span 4;
     z-index: 2;
     transform: translateY(-2rem);
@@ -24,7 +25,7 @@
   }
 
   &__item-3 {
-    grid-row: 3 / span 3;
+    grid-row: 3 / span 4;
     grid-column: 2 / span 4;
     z-index: 3;
     &:hover {
@@ -47,10 +48,5 @@
       padding: 1rem;
       box-shadow: 0 2rem 5rem rgba($color-black, 0.6);
     }
-  }
-
-  // to scale down other pictures while 1 img is hovered
-  &:hover &__photo:not(:hover) {
-    transform: scale(0.9);
   }
 }

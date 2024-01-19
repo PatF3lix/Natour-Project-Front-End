@@ -129,6 +129,14 @@ body {
     grid-column: 1 / 2;
     margin: 2rem 0 0 15rem; }
 
+.section-features {
+  padding: 15rem 0;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/nat-4.jpg");
+  background-size: cover;
+  transform: skewY(-7deg) translateY(-12rem); }
+  .section-features > * {
+    transform: skewY(7deg); }
+
 .btn {
   /* the translate is always in relative to the initial state: &:link */ }
   .btn:link, .btn:visited {
@@ -147,7 +155,7 @@ body {
       transform: scaleX(1.4) scaleY(1.6);
       opacity: 0; }
   .btn:active {
-    transform: translateY(-0.1rem);
+    transform: translateY(-0.2rem);
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
   .btn::after {
     content: "";
@@ -183,7 +191,7 @@ body {
   background-color: #55c57a;
   color: #fff;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
-  transform: translateY(2px); }
+  transform: translateY(-2px); }
 
 .btn-text:active {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
@@ -193,22 +201,23 @@ body {
   grid-column: 2 / 3;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min-content, 5vw));
-  grid-template-rows: repeat(auto-fill, minmax(min-content, 4vw)); }
+  grid-template-rows: repeat(6, minmax(min-content, 4vw));
+  position: relative; }
   .composition__item-1 {
-    grid-row: 1 / span 3;
+    grid-row: 1 / span 4;
     grid-column: 1 / span 4;
     z-index: 1; }
     .composition__item-1:hover {
       z-index: 5; }
   .composition__item-2 {
-    grid-row: 2 / span 3;
+    grid-row: 2 / span 4;
     grid-column: 4 / span 4;
     z-index: 2;
     transform: translateY(-2rem); }
     .composition__item-2:hover {
       z-index: 5; }
   .composition__item-3 {
-    grid-row: 3 / span 3;
+    grid-row: 3 / span 4;
     grid-column: 2 / span 4;
     z-index: 3; }
     .composition__item-3:hover {
@@ -226,8 +235,38 @@ body {
       border: 1rem solid #55c57a;
       padding: 1rem;
       box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.6); }
-  .composition:hover .composition__photo:not(:hover) {
-    transform: scale(0.9); }
+
+.card-container {
+  display: flex;
+  gap: 5rem;
+  justify-content: center; }
+  .card-container__item {
+    width: 25rem;
+    padding: 2.5rem;
+    padding-bottom: 4rem;
+    font-size: 1.5rem;
+    text-align: center;
+    border-radius: 3px;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease; }
+    .card-container__item:hover {
+      transform: translateY(-2rem) scale(1.1);
+      box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.3); }
+
+.features-icon {
+  font-size: 6rem;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  display: inline-block;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; }
 
 .header {
   height: 95vh;
