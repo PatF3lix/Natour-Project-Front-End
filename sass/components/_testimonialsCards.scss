@@ -1,5 +1,6 @@
 .testimonials-card {
   background-color: rgba($color-white, 0.6);
+  box-shadow: 0 1.5em 3rem rgba($color-black, 0.15);
   width: 80rem;
   height: 25rem;
   transform: skewX(-7deg);
@@ -45,6 +46,13 @@
   }
 
   &-1 {
+    transition: all 0.4s ease;
+
+    &:hover {
+      transform: scale(1.1) skewX(-7deg);
+      box-shadow: 0 2em 4rem rgba($color-black, 0.3);
+    }
+
     &:hover .testimonials-card-img-container-1 {
       filter: blur(0.15rem);
     }
@@ -55,6 +63,12 @@
   }
 
   &-2 {
+    transition: all 0.4s ease;
+    &:hover {
+      transform: scale(1.1) skewX(-7deg);
+      box-shadow: 0 2em 4rem rgba($color-black, 0.3);
+    }
+
     &:hover .testimonials-card-img-container-2 {
       filter: blur(0.15rem);
     }

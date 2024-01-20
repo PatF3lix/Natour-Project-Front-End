@@ -160,7 +160,7 @@ body {
 
 .section-testimonials {
   padding-top: 10rem;
-  background-color: rgba(255, 255, 255, 0.2); }
+  position: relative; }
 
 .btn {
   /* the translate is always in relative to the initial state: &:link */ }
@@ -392,6 +392,7 @@ body {
 
 .testimonials-card {
   background-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 1.5em 3rem rgba(0, 0, 0, 0.15);
   width: 80rem;
   height: 25rem;
   transform: skewX(-7deg);
@@ -421,14 +422,24 @@ body {
     padding-bottom: 1rem; }
   .testimonials-card-text {
     text-align: left; }
-  .testimonials-card-1:hover .testimonials-card-img-container-1 {
-    filter: blur(0.15rem); }
-  .testimonials-card-1:hover .testimonials-card-author-name {
-    display: block; }
-  .testimonials-card-2:hover .testimonials-card-img-container-2 {
-    filter: blur(0.15rem); }
-  .testimonials-card-2:hover .testimonials-card-author-name {
-    display: block; }
+  .testimonials-card-1 {
+    transition: all 0.4s ease; }
+    .testimonials-card-1:hover {
+      transform: scale(1.1) skewX(-7deg);
+      box-shadow: 0 2em 4rem rgba(0, 0, 0, 0.3); }
+    .testimonials-card-1:hover .testimonials-card-img-container-1 {
+      filter: blur(0.15rem); }
+    .testimonials-card-1:hover .testimonials-card-author-name {
+      display: block; }
+  .testimonials-card-2 {
+    transition: all 0.4s ease; }
+    .testimonials-card-2:hover {
+      transform: scale(1.1) skewX(-7deg);
+      box-shadow: 0 2em 4rem rgba(0, 0, 0, 0.3); }
+    .testimonials-card-2:hover .testimonials-card-img-container-2 {
+      filter: blur(0.15rem); }
+    .testimonials-card-2:hover .testimonials-card-author-name {
+      display: block; }
 
 .testimonials-card-author-name {
   color: #fff;
@@ -439,6 +450,19 @@ body {
   left: 5.5rem;
   display: none;
   text-transform: uppercase; }
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: 0.15; }
+  .bg-video__content {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; }
 
 .header {
   height: 95vh;
