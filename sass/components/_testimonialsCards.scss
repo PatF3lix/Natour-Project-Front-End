@@ -1,0 +1,76 @@
+.testimonials-card {
+  background-color: rgba($color-white, 0.6);
+  width: 80rem;
+  height: 25rem;
+  transform: skewX(-7deg);
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  & > * {
+    transform: skewX(7deg);
+  }
+
+  &-img-container {
+    display: inline-block;
+    width: 45rem;
+    height: 15rem;
+    margin: 0 4rem;
+    border-radius: 50%;
+    background-position: 50% 50%;
+    background-size: cover;
+
+    &-1 {
+      background-image: url("../../img/nat-8.jpg");
+    }
+
+    &-2 {
+      background-image: url("../../img/nat-9.jpg");
+    }
+  }
+
+  &-written-content {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding-right: 6rem;
+  }
+
+  &-heading {
+    padding-bottom: 1rem;
+  }
+
+  &-text {
+    text-align: left;
+  }
+
+  &-1 {
+    &:hover .testimonials-card-img-container-1 {
+      filter: blur(0.15rem);
+    }
+
+    &:hover .testimonials-card-author-name {
+      display: block;
+    }
+  }
+
+  &-2 {
+    &:hover .testimonials-card-img-container-2 {
+      filter: blur(0.15rem);
+    }
+    &:hover .testimonials-card-author-name {
+      display: block;
+    }
+  }
+}
+
+.testimonials-card-author-name {
+  color: $color-white;
+  font-size: 1.8rem;
+  font-weight: 600;
+  position: absolute;
+  top: 11rem;
+  left: 5.5rem;
+  display: none;
+  text-transform: uppercase;
+}

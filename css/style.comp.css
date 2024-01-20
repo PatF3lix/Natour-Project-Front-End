@@ -155,8 +155,12 @@ body {
 
 .section-tours {
   background-color: #f7f7f7;
-  padding: 25rem 0 50rem 0;
+  padding: 25rem 0 15rem 0;
   margin-top: -25rem; }
+
+.section-testimonials {
+  padding-top: 10rem;
+  background-color: rgba(255, 255, 255, 0.2); }
 
 .btn {
   /* the translate is always in relative to the initial state: &:link */ }
@@ -360,7 +364,7 @@ body {
     .cards-tours-heading-2 {
       background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.9)); }
       .cards-tours-heading-2-p1 {
-        top: 10rem;
+        top: 11rem;
         left: 21rem; }
       .cards-tours-heading-2-p2 {
         top: 3.5rem;
@@ -368,7 +372,7 @@ body {
     .cards-tours-heading-3 {
       background-image: linear-gradient(to right bottom, rgba(41, 152, 255, 0.8), rgba(86, 67, 250, 0.9)); }
       .cards-tours-heading-3-p1 {
-        top: 10rem;
+        top: 11rem;
         left: 22rem; }
       .cards-tours-heading-3-p2 {
         top: 3.5rem;
@@ -385,6 +389,56 @@ body {
       margin: 0 4rem 0 4rem; }
     .cards-tours-feature-container > *:last-child {
       padding-bottom: 2rem; }
+
+.testimonials-card {
+  background-color: rgba(255, 255, 255, 0.6);
+  width: 80rem;
+  height: 25rem;
+  transform: skewX(-7deg);
+  display: flex;
+  align-items: center;
+  position: relative; }
+  .testimonials-card > * {
+    transform: skewX(7deg); }
+  .testimonials-card-img-container {
+    display: inline-block;
+    width: 45rem;
+    height: 15rem;
+    margin: 0 4rem;
+    border-radius: 50%;
+    background-position: 50% 50%;
+    background-size: cover; }
+    .testimonials-card-img-container-1 {
+      background-image: url("../../img/nat-8.jpg"); }
+    .testimonials-card-img-container-2 {
+      background-image: url("../../img/nat-9.jpg"); }
+  .testimonials-card-written-content {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding-right: 6rem; }
+  .testimonials-card-heading {
+    padding-bottom: 1rem; }
+  .testimonials-card-text {
+    text-align: left; }
+  .testimonials-card-1:hover .testimonials-card-img-container-1 {
+    filter: blur(0.15rem); }
+  .testimonials-card-1:hover .testimonials-card-author-name {
+    display: block; }
+  .testimonials-card-2:hover .testimonials-card-img-container-2 {
+    filter: blur(0.15rem); }
+  .testimonials-card-2:hover .testimonials-card-author-name {
+    display: block; }
+
+.testimonials-card-author-name {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 600;
+  position: absolute;
+  top: 11rem;
+  left: 5.5rem;
+  display: none;
+  text-transform: uppercase; }
 
 .header {
   height: 95vh;
@@ -413,3 +467,11 @@ body {
   display: flex;
   justify-content: center;
   gap: 15rem; }
+
+.testimonials-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 7rem;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 8rem; }
