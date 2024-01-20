@@ -115,6 +115,9 @@ body {
 .u-margin-bottom-small {
   margin-bottom: 1.5rem; }
 
+.u-margin-top-big {
+  margin-top: 8rem; }
+
 .section-about {
   background-color: #f7f7f7;
   padding: 25rem 0;
@@ -136,6 +139,11 @@ body {
   transform: skewY(-7deg) translateY(-12rem); }
   .section-features > * {
     transform: skewY(7deg); }
+
+.section-tours {
+  background-color: #f7f7f7;
+  padding: 25rem 0 50rem 0;
+  margin-top: -25rem; }
 
 .btn {
   /* the translate is always in relative to the initial state: &:link */ }
@@ -177,6 +185,11 @@ body {
     color: #777; }
     .btn--white::after {
       background-color: #fff; }
+  .btn--green {
+    background-color: #55c57a;
+    color: #fff; }
+    .btn--green::after {
+      background-color: #7ed56f; }
 
 .btn-text:link, .btn-text:visited {
   color: #55c57a;
@@ -268,6 +281,94 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; }
 
+.cards-tours {
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative; }
+  .cards-tours__side {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition: all 0.6s ease-in; }
+    .cards-tours__side--front {
+      background-color: #fff;
+      display: inline-block;
+      box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2);
+      border-radius: 3px;
+      overflow: hidden;
+      position: relative; }
+    .cards-tours__side--back {
+      transform: rotateY(180deg); }
+      .cards-tours__side--back-1 {
+        background-image: linear-gradient(to right bottom, #ffb900, #ff7730); }
+      .cards-tours__side--back-2 {
+        background-image: linear-gradient(to right bottom, #7ed56f, #28b485); }
+      .cards-tours__side--back-3 {
+        background-image: linear-gradient(to right bottom, #2998ff, #5643fa); }
+  .cards-tours:hover .cards-tours__side--front {
+    transform: rotateY(180deg); }
+  .cards-tours:hover .cards-tours__side--back {
+    transform: rotateY(0); }
+  .cards-tours-img-container {
+    width: 35rem;
+    height: 20rem;
+    overflow: hidden;
+    position: relative;
+    background-size: cover;
+    background-position: top;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    margin-bottom: 2rem; }
+    .cards-tours-img-container-1 {
+      background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.2), rgba(255, 119, 48, 0.6)), url("../../img/nat-5.jpg"); }
+    .cards-tours-img-container-2 {
+      background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.2), rgba(40, 180, 133, 0.6)), url("../../img/nat-6.jpg"); }
+    .cards-tours-img-container-3 {
+      background-image: linear-gradient(to right bottom, rgba(41, 152, 255, 0.2), rgba(86, 67, 250, 0.6)), url("../../img/nat-7.jpg"); }
+  .cards-tours-heading {
+    color: white;
+    position: absolute;
+    padding: 0.5rem;
+    font-size: 2rem; }
+    .cards-tours-heading-1 {
+      background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.8), rgba(255, 119, 48, 0.9)); }
+      .cards-tours-heading-1-p1 {
+        top: 11rem;
+        left: 24.5rem; }
+      .cards-tours-heading-1-p2 {
+        top: 3.5rem;
+        left: -2.1rem; }
+    .cards-tours-heading-2 {
+      background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.9)); }
+      .cards-tours-heading-2-p1 {
+        top: 10rem;
+        left: 21rem; }
+      .cards-tours-heading-2-p2 {
+        top: 3.5rem;
+        left: 5.8rem; }
+    .cards-tours-heading-3 {
+      background-image: linear-gradient(to right bottom, rgba(41, 152, 255, 0.8), rgba(86, 67, 250, 0.9)); }
+      .cards-tours-heading-3-p1 {
+        top: 10rem;
+        left: 22rem; }
+      .cards-tours-heading-3-p2 {
+        top: 3.5rem;
+        left: -3rem; }
+  .cards-tours-feature-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; }
+    .cards-tours-feature-container > * {
+      padding-bottom: 2rem; }
+    .cards-tours-feature-container > *:not(:last-child) {
+      border-bottom: 2px solid #f7f7f7;
+      margin: 0 4rem 0 4rem; }
+    .cards-tours-feature-container > *:last-child {
+      padding-bottom: 2rem; }
+
 .header {
   height: 95vh;
   background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero.jpg");
@@ -290,3 +391,8 @@ body {
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%); }
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 15rem; }

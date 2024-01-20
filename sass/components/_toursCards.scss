@@ -1,0 +1,186 @@
+.cards-tours {
+  //**How to rotate the card on hover
+  //the perspective value is required for the card to rotate torwards the user
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+
+  //   you need to make 2 divs, 1 for the front side and 1 for the back side
+  // both sides needs to be positionned absolutely
+  &__side {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    // this following property permits you to hide the backside of the card
+    backface-visibility: hidden;
+    transition: all 0.6s ease-in;
+
+    //content of the front side goes here
+    &--front {
+      background-color: $color-white;
+      display: inline-block;
+      box-shadow: 0 1.5rem 3rem rgba($color-black, 0.2);
+      border-radius: 3px;
+      overflow: hidden;
+      position: relative;
+    }
+    // the back side should be rotated initially
+    //content for th back side goes here
+    &--back {
+      transform: rotateY(180deg);
+
+      &-1 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-secondary-light,
+          $color-secondary-dark
+        );
+      }
+
+      &-2 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-primary-light,
+          $color-primary-dark
+        );
+      }
+
+      &-3 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-tertiary-light,
+          $color-tertiary-dark
+        );
+      }
+    }
+  }
+
+  //when the card element is hovered, the front side is rotated 180 deg on the y axis
+  &:hover &__side--front {
+    transform: rotateY(180deg);
+  }
+  //when the card element is hovered, the back side is rotated back to 0 deg on the y axis
+  &:hover &__side--back {
+    transform: rotateY(0);
+  }
+
+  &-img-container {
+    width: 35rem;
+    height: 20rem;
+    overflow: hidden;
+    position: relative;
+    background-size: cover;
+    background-position: top;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    margin-bottom: 2rem;
+
+    &-1 {
+      background-image: linear-gradient(
+          to right bottom,
+          rgba($color-secondary-light, 0.2),
+          rgba($color-secondary-dark, 0.6)
+        ),
+        url("../../img/nat-5.jpg");
+    }
+
+    &-2 {
+      background-image: linear-gradient(
+          to right bottom,
+          rgba($color-primary-light, 0.2),
+          rgba($color-primary-dark, 0.6)
+        ),
+        url("../../img/nat-6.jpg");
+    }
+
+    &-3 {
+      background-image: linear-gradient(
+          to right bottom,
+          rgba($color-tertiary-light, 0.2),
+          rgba($color-tertiary-dark, 0.6)
+        ),
+        url("../../img/nat-7.jpg");
+    }
+  }
+
+  &-heading {
+    color: white;
+    position: absolute;
+    padding: 0.5rem;
+    font-size: 2rem;
+
+    &-1 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-secondary-light, 0.8),
+        rgba($color-secondary-dark, 0.9)
+      );
+
+      &-p1 {
+        top: 11rem;
+        left: 24.5rem;
+      }
+
+      &-p2 {
+        top: 3.5rem;
+        left: -2.1rem;
+      }
+    }
+
+    &-2 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-primary-light, 0.8),
+        rgba($color-primary-dark, 0.9)
+      );
+
+      &-p1 {
+        top: 10rem;
+        left: 21rem;
+      }
+
+      &-p2 {
+        top: 3.5rem;
+        left: 5.8rem;
+      }
+    }
+
+    &-3 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-tertiary-light, 0.8),
+        rgba($color-tertiary-dark, 0.9)
+      );
+      &-p1 {
+        top: 10rem;
+        left: 22rem;
+      }
+
+      &-p2 {
+        top: 3.5rem;
+        left: -3rem;
+      }
+    }
+  }
+
+  &-feature-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    & > * {
+      padding-bottom: 2rem;
+    }
+
+    & > *:not(:last-child) {
+      border-bottom: 2px solid $color-grey-light-1;
+      margin: 0 4rem 0 4rem;
+    }
+
+    & > *:last-child {
+      padding-bottom: 2rem;
+    }
+  }
+}
