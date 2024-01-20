@@ -326,7 +326,7 @@ body {
       .cards-tours__side--back-3 {
         background-image: linear-gradient(to right bottom, #2998ff, #5643fa); }
   .cards-tours:hover .cards-tours__side--front {
-    transform: rotateY(180deg); }
+    transform: rotateY(-180deg); }
   .cards-tours:hover .cards-tours__side--back {
     transform: rotateY(0); }
   .cards-tours-img-container {
@@ -353,10 +353,10 @@ body {
       background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.8), rgba(255, 119, 48, 0.9)); }
       .cards-tours-heading-1-p1 {
         top: 11rem;
-        left: 24.5rem; }
+        left: 25rem; }
       .cards-tours-heading-1-p2 {
         top: 3.5rem;
-        left: -2.1rem; }
+        left: -2.2rem; }
     .cards-tours-heading-2 {
       background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.9)); }
       .cards-tours-heading-2-p1 {
@@ -364,7 +364,7 @@ body {
         left: 21rem; }
       .cards-tours-heading-2-p2 {
         top: 3.5rem;
-        left: 5.8rem; }
+        left: 5.7rem; }
     .cards-tours-heading-3 {
       background-image: linear-gradient(to right bottom, rgba(41, 152, 255, 0.8), rgba(86, 67, 250, 0.9)); }
       .cards-tours-heading-3-p1 {
@@ -372,7 +372,7 @@ body {
         left: 22rem; }
       .cards-tours-heading-3-p2 {
         top: 3.5rem;
-        left: -3rem; }
+        left: -2.9rem; }
   .cards-tours-feature-container {
     text-align: center;
     display: flex;

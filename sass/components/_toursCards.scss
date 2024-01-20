@@ -63,7 +63,7 @@
 
   //when the card element is hovered, the front side is rotated 180 deg on the y axis
   &:hover &__side--front {
-    transform: rotateY(180deg);
+    transform: rotateY(-180deg);
   }
   //when the card element is hovered, the back side is rotated back to 0 deg on the y axis
   &:hover &__side--back {
@@ -123,12 +123,12 @@
 
       &-p1 {
         top: 11rem;
-        left: 24.5rem;
+        left: 25rem;
       }
 
       &-p2 {
         top: 3.5rem;
-        left: -2.1rem;
+        left: -2.2rem;
       }
     }
 
@@ -146,7 +146,7 @@
 
       &-p2 {
         top: 3.5rem;
-        left: 5.8rem;
+        left: 5.7rem;
       }
     }
 
@@ -163,7 +163,7 @@
 
       &-p2 {
         top: 3.5rem;
-        left: -3rem;
+        left: -2.9rem;
       }
     }
   }
