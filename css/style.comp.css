@@ -175,7 +175,7 @@ body {
 
 .btn {
   /* the translate is always in relative to the initial state: &:link */ }
-  .btn:link, .btn:visited {
+  .btn, .btn:link, .btn:visited {
     text-transform: uppercase;
     text-decoration: none;
     padding: 1.5rem 4rem;
@@ -183,14 +183,17 @@ body {
     border-radius: 10rem;
     transition: all 0.2s;
     position: relative;
-    font-size: 1.6rem; }
+    font-size: 1.6rem;
+    border: none;
+    cursor: pointer; }
   .btn:hover {
+    transform: translateY(-0.3rem);
     transform: translateY(-0.3rem);
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
     .btn:hover::after {
       transform: scaleX(1.4) scaleY(1.6);
       opacity: 0; }
-  .btn:active {
+  .btn:active, .btn:focus {
     transform: translateY(-0.2rem);
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
   .btn::after {
@@ -481,7 +484,8 @@ body {
   background-size: cover;
   margin: auto;
   width: 70%;
-  height: 55rem; }
+  height: 55rem;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2); }
   .booking-card:hover .booking-card__form {
     width: 58%; }
   .booking-card__form {
@@ -506,13 +510,26 @@ body {
   display: inline-block;
   border-style: none;
   background-color: #fff;
-  padding: 2.5rem; }
+  padding: 2.5rem;
+  font-family: inherit;
+  border-radius: 2px;
+  border-bottom: 3px solid transparent;
+  color: inherit; }
+  .form-control:focus {
+    outline: none;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+    border-bottom: 3px solid #55c57a; }
+    .form-control:focus:invalid {
+      border-bottom: 3px solid #ff7730; }
+  .form-control::placeholder {
+    color: #999; }
 
-.radio-btn-label {
-  font-size: 1.8rem; }
-
-.radio-btn-label:not(:last-child) {
-  margin-right: 3rem; }
+.radio-btn {
+  cursor: pointer; }
+  .radio-btn-label {
+    font-size: 1.8rem; }
+  .radio-btn-label:not(:last-child) {
+    margin-right: 3rem; }
 
 .header {
   height: 95vh;
