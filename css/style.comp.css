@@ -128,6 +128,12 @@ body {
 .u-margin-bottom-small {
   margin-bottom: 1.5rem; }
 
+.u-margin-top-very-small {
+  margin-top: 1rem; }
+
+.u-margin-top-small {
+  margin-top: 4rem; }
+
 .u-margin-top-big {
   margin-top: 8rem; }
 
@@ -160,7 +166,12 @@ body {
 
 .section-testimonials {
   padding-top: 10rem;
-  position: relative; }
+  position: relative;
+  margin: 0 auto; }
+
+.section-booking {
+  padding: 15rem 0;
+  background-image: linear-gradient(to right bottom, #7ed56f, #28b485); }
 
 .btn {
   /* the translate is always in relative to the initial state: &:link */ }
@@ -463,6 +474,45 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover; }
+
+.booking-card {
+  background-image: url("../../img/nat-10.jpg");
+  background-position: 50% 50%;
+  background-size: cover;
+  margin: auto;
+  width: 70%;
+  height: 55rem; }
+  .booking-card:hover .booking-card__form {
+    width: 58%; }
+  .booking-card__form {
+    clip-path: polygon(0 0, 100% 0, 85% 100%, -100% 100%);
+    width: 55%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+    align-items: start;
+    padding-left: 4rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: -1;
+    transition: all 0.4s ease-in; }
+    .booking-card__form__form-radio-btns {
+      border-color: #55c57a;
+      cursor: pointer; }
+
+.form-control {
+  width: 70%;
+  height: 4rem;
+  display: inline-block;
+  border-style: none;
+  background-color: #fff;
+  padding: 2.5rem; }
+
+.radio-btn-label {
+  font-size: 1.8rem; }
+
+.radio-btn-label:not(:last-child) {
+  margin-right: 3rem; }
 
 .header {
   height: 95vh;
