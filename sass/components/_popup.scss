@@ -5,7 +5,12 @@
   top: 0;
   left: 0;
   background-color: rgba($color-black, 0.8s);
-  z-index: 9999;
+  z-index: -1;
+
+  //hide the popup
+  opacity: 0;
+  visibility: 0;
+  transition: all 0.3s;
 
   &__content {
     @include absCenter;
@@ -15,6 +20,9 @@
     border-radius: 3px;
     display: grid;
     grid-template-columns: 4fr 8fr;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+    transition: all 0.4s 0.2s;
   }
 
   &__left {
@@ -49,5 +57,35 @@
 
   &_heading-tertiary {
     align-self: flex-start;
+  }
+
+  //Open state
+  &:target {
+    opacity: 1;
+    visibility: visible;
+    z-index: 999;
+  }
+
+  &:target &__content {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  &__close {
+    &:link,
+    &:visited {
+      color: $color-grey-dark;
+      position: absolute;
+      top: 2.5rem;
+      right: 2.5rem;
+      font-size: 3rem;
+      text-decoration: none;
+      display: inline-block;
+      line-height: 1;
+    }
+
+    &:hover {
+      color: $color-primary;
+    }
   }
 }
