@@ -1,8 +1,8 @@
 .testimonials-cards {
-  display: flex;
-  flex-direction: column;
-  gap: 7rem;
+  display: grid;
+  grid-template-columns: minmax(15rem, 80rem);
+  row-gap: 5rem;
+  justify-content: space-around;
   align-items: center;
-  justify-content: center;
-  padding-bottom: 8rem;
+  padding: 0 2.5rem 8rem 2.5rem;
 }

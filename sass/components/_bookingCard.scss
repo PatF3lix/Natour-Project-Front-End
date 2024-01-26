@@ -1,6 +1,6 @@
 .booking-card {
   background-image: url("../../img/nat-10.jpg");
-  background-position: 50% 50%;
+  background-position: 65% 50%;
   background-size: cover;
   margin: auto;
   width: 70%;
@@ -8,27 +8,36 @@
   box-shadow: 0 1.5rem 4rem rgba($color-black, 0.2);
 
   &:hover &__form {
-    width: 58%;
+    width: 71%;
   }
 
   &__form {
     clip-path: polygon(0 0, 100% 0, 85% 100%, -100% 100%);
-    width: 55%;
+    width: 65%;
     height: 100%;
     display: flex;
     flex-direction: column;
-    gap: 6rem;
+    gap: 5rem;
     align-items: start;
     padding-left: 4rem;
     background-color: rgba($color-white, 0.9);
     z-index: -1;
     transition: all 0.4s ease-in;
 
-    &__form-radio-btns {
-      border-color: $color-primary;
+    &-radio-btns {
+      width: 85%;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min-content, 17rem));
+      grid-auto-flow: row;
+      row-gap: 1rem;
       cursor: pointer;
     }
   }
+}
+
+.group-option {
+  width: 100%;
+  padding-left: 1rem;
 }
 
 .form-control {

@@ -1,10 +1,15 @@
 .card-container {
-  display: flex;
-  gap: 5rem;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(10rem, 25rem));
+  grid-auto-flow: row;
+  row-gap: 5rem;
+  column-gap: 5rem;
   justify-content: center;
+  align-content: center;
+  padding: 0 2rem;
 
   &__item {
-    width: 25rem;
+    width: 100%;
     padding: 2.5rem;
     padding-bottom: 4rem;
     font-size: 1.5rem;

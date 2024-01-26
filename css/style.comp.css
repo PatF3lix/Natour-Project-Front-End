@@ -1,3 +1,15 @@
+/*0-600: Phones
+600-900: Tablet portrait
+900-1200: Tablet lanscape
+[1200-1800] is where our normal styles apply
+1800px +: Big desktop
+
+$breakpoint argument choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+*/
 /* This file will be for the real low level basics,
  such as resets and styles for the HTML and BODY elements*/
 *,
@@ -12,9 +24,22 @@
 /* (10 * 100) / 16 = 62.5% */
 html {
   font-size: 62.5%; }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
 
 body {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  padding: 3rem; }
+  @media (max-width: 56.25em) {
+    body {
+      padding: 0; } }
 
 @keyframes moveInRight {
   0% {
@@ -51,8 +76,7 @@ body {
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 1.7;
-  color: #777;
-  padding: 3rem; }
+  color: #777; }
 
 .heading-primary {
   color: #fff;
@@ -70,6 +94,10 @@ body {
     animation-name: moveInLeft;
     animation-duration: 3s;
     animation-timing-function: ease-out; }
+    @media (max-width: 37.5em) {
+      .heading-primary--main {
+        letter-spacing: 1rem;
+        font-size: 5rem; } }
   .heading-primary--sub {
     display: block;
     font-size: 2rem;
@@ -78,6 +106,9 @@ body {
     animation-name: moveInRight;
     animation-duration: 3s;
     animation-timing-function: ease-out; }
+    @media (max-width: 37.5em) {
+      .heading-primary--sub {
+        letter-spacing: 0.5rem; } }
 
 .heading-secondary {
   font-size: 3.5rem;
@@ -89,6 +120,9 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: all 0.2s; }
+  @media (max-width: 56.25em) {
+    .heading-secondary {
+      font-size: 3rem; } }
   .heading-secondary:hover {
     transform: skewY(-2deg) skewX(15deg) scale(1.1);
     text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
@@ -143,13 +177,21 @@ body {
   margin-top: -20vh; }
   .section-about__content {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(auto, 50rem));
+    justify-content: center;
+    grid-auto-flow: row;
     column-gap: 5rem; }
+    @media (max-width: 800px) {
+      .section-about__content {
+        row-gap: 5rem;
+        grid-template-columns: repeat(auto-fill, minmax(auto, 70rem)); } }
   .section-about__text-content {
+    padding: 1rem;
     align-self: start;
-    min-width: 30rem;
-    grid-column: 1 / 2;
-    margin: 2rem 0 0 15rem; }
+    margin: 0 0 0 10rem; }
+    @media (max-width: 800px) {
+      .section-about__text-content {
+        margin: 0 0 0 0; } }
 
 .section-features {
   padding: 15rem 0;
@@ -242,11 +284,11 @@ body {
   transform: translateY(0); }
 
 .composition {
-  grid-column: 2 / 3;
+  width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min-content, 5vw));
-  grid-template-rows: repeat(6, minmax(min-content, 4vw));
-  position: relative; }
+  grid-template-columns: repeat(auto-fill, minmax(2rem, 7rem));
+  position: relative;
+  padding: 2rem; }
   .composition__item-1 {
     grid-row: 1 / span 4;
     grid-column: 1 / span 4;
@@ -260,12 +302,21 @@ body {
     transform: translateY(-2rem); }
     .composition__item-2:hover {
       z-index: 5; }
+    @media (max-width: 800px) {
+      .composition__item-2 {
+        transform: translateY(0);
+        grid-column: 3 / span 5;
+        grid-row: 4 / span 3; } }
   .composition__item-3 {
     grid-row: 3 / span 4;
     grid-column: 2 / span 4;
     z-index: 3; }
     .composition__item-3:hover {
       z-index: 5; }
+    @media (max-width: 800px) {
+      .composition__item-3 {
+        grid-row: 1 / span 4;
+        grid-column: 6 / span 4; } }
   .composition__photo {
     max-width: 100%;
     max-height: 100%;
@@ -281,11 +332,16 @@ body {
       box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.6); }
 
 .card-container {
-  display: flex;
-  gap: 5rem;
-  justify-content: center; }
+  display: grid;
+  grid-template-columns: repeat(4, minmax(10rem, 25rem));
+  grid-auto-flow: row;
+  row-gap: 5rem;
+  column-gap: 5rem;
+  justify-content: center;
+  align-content: center;
+  padding: 0 2rem; }
   .card-container__item {
-    width: 25rem;
+    width: 100%;
     padding: 2.5rem;
     padding-bottom: 4rem;
     font-size: 1.5rem;
@@ -348,7 +404,7 @@ body {
   .cards-tours:hover .cards-tours__side--back {
     transform: rotateY(0); }
   .cards-tours-img-container {
-    width: 35rem;
+    width: 100%;
     height: 20rem;
     overflow: hidden;
     position: relative;
@@ -407,7 +463,7 @@ body {
 .testimonials-card {
   background-color: rgba(255, 255, 255, 0.6);
   box-shadow: 0 1.5em 3rem rgba(0, 0, 0, 0.15);
-  width: 80rem;
+  width: 100%;
   height: 25rem;
   transform: skewX(-7deg);
   display: flex;
@@ -480,29 +536,37 @@ body {
 
 .booking-card {
   background-image: url("../../img/nat-10.jpg");
-  background-position: 50% 50%;
+  background-position: 65% 50%;
   background-size: cover;
   margin: auto;
   width: 70%;
   height: 55rem;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2); }
   .booking-card:hover .booking-card__form {
-    width: 58%; }
+    width: 71%; }
   .booking-card__form {
     clip-path: polygon(0 0, 100% 0, 85% 100%, -100% 100%);
-    width: 55%;
+    width: 65%;
     height: 100%;
     display: flex;
     flex-direction: column;
-    gap: 6rem;
+    gap: 5rem;
     align-items: start;
     padding-left: 4rem;
     background-color: rgba(255, 255, 255, 0.9);
     z-index: -1;
     transition: all 0.4s ease-in; }
-    .booking-card__form__form-radio-btns {
-      border-color: #55c57a;
+    .booking-card__form-radio-btns {
+      width: 85%;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min-content, 17rem));
+      grid-auto-flow: row;
+      row-gap: 1rem;
       cursor: pointer; }
+
+.group-option {
+  width: 100%;
+  padding-left: 1rem; }
 
 .form-control {
   width: 70%;
@@ -540,7 +604,7 @@ body {
   background-color: rgba(0, 0, 0, 0.8);
   z-index: -1;
   opacity: 0;
-  visibility: 0;
+  visibility: hidden;
   transition: all 0.3s; }
   .popup__content {
     position: absolute;
@@ -621,17 +685,20 @@ body {
     transform: translate(-50%, -50%); }
 
 .cards-container {
-  display: flex;
-  justify-content: center;
-  gap: 15rem; }
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(36rem, 0.25fr));
+  grid-auto-flow: row;
+  justify-content: space-evenly;
+  column-gap: 4rem;
+  row-gap: 10rem; }
 
 .testimonials-cards {
-  display: flex;
-  flex-direction: column;
-  gap: 7rem;
+  display: grid;
+  grid-template-columns: minmax(15rem, 80rem);
+  row-gap: 5rem;
+  justify-content: space-around;
   align-items: center;
-  justify-content: center;
-  padding-bottom: 8rem; }
+  padding: 0 2.5rem 8rem 2.5rem; }
 
 .footer {
   background-color: #333;

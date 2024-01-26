@@ -1,9 +1,9 @@
 .composition {
-  grid-column: 2 / 3;
+  width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min-content, 5vw));
-  grid-template-rows: repeat(6, minmax(min-content, 4vw));
+  grid-template-columns: repeat(auto-fill, minmax(2rem, 7rem));
   position: relative;
+  padding: 2rem;
 
   &__item-1 {
     grid-row: 1 / span 4;
@@ -19,8 +19,15 @@
     grid-column: 4 / span 4;
     z-index: 2;
     transform: translateY(-2rem);
+
     &:hover {
       z-index: 5;
+    }
+
+    @media (max-width: 800px) {
+      transform: translateY(0);
+      grid-column: 3 / span 5;
+      grid-row: 4 / span 3;
     }
   }
 
@@ -30,6 +37,11 @@
     z-index: 3;
     &:hover {
       z-index: 5;
+    }
+
+    @media (max-width: 800px) {
+      grid-row: 1 / span 4;
+      grid-column: 6 / span 4;
     }
   }
 
