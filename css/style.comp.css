@@ -544,6 +544,9 @@ body {
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2); }
   .booking-card:hover .booking-card__form {
     width: 71%; }
+    @media (max-width: 670px) {
+      .booking-card:hover .booking-card__form {
+        width: 72%; } }
   .booking-card__form {
     clip-path: polygon(0 0, 100% 0, 85% 100%, -100% 100%);
     width: 65%;
@@ -556,6 +559,10 @@ body {
     background-color: rgba(255, 255, 255, 0.9);
     z-index: -1;
     transition: all 0.4s ease-in; }
+    @media (max-width: 670px) {
+      .booking-card__form {
+        width: 70%;
+        gap: 3.5rem; } }
     .booking-card__form-radio-btns {
       width: 85%;
       display: grid;
@@ -714,16 +721,20 @@ body {
   .footer__navigation {
     border-top: 1px solid #777;
     padding-top: 2rem;
-    margin-left: 30rem; }
+    justify-self: center; }
   .footer__content {
-    display: flex;
-    justify-content: space-between; }
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: space-around;
+    grid-auto-flow: row;
+    row-gap: 4rem; }
   .footer__list {
     list-style: none; }
   .footer__copyright {
-    margin-right: 5rem;
     border-top: 1px solid #777;
-    padding-top: 2rem; }
+    padding-top: 2rem;
+    justify-self: center;
+    text-align: center; }
   .footer__item {
     display: inline-block; }
     .footer__item:not(:last-child) {
