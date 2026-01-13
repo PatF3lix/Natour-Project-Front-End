@@ -4,7 +4,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba($color-black, 0.8s);
+  background-color: rgba($color-black, 0.8);
   z-index: -1;
 
   //hide the popup
@@ -16,7 +16,7 @@
     @include absCenter;
     width: 75%;
     background-color: $color-white;
-    box-shadow: 0 2rem 4rem rgba($color-black, 0.2s);
+    box-shadow: 0 2rem 4rem rgba($color-black, 0.2);
     border-radius: 3px;
     display: grid;
     grid-template-columns: 4fr 8fr;
