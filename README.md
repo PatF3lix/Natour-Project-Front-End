@@ -29,6 +29,20 @@ This project does **not** use JavaScript frameworks and focuses entirely on **cl
 
 ---
 
+## 🔧 Prerequisites
+
+Make sure you have the following installed:
+
+  - Node.js (v16+ recommended)
+
+  - npm (comes with Node.js)
+
+  - live-server (if you want to run it globally): npm install -g live-server
+
+  - npm-run-all (optional, only needed if using parallel scripts): npm install -g npm-run-all
+
+---
+
 ## 📁 Project Structure
 
 ---
@@ -78,35 +92,21 @@ npm install
 ```
 ### 2️⃣ Available Scripts
 
-Compile SASS once
-   npm run compile:sass
+Compile SASS once: npm run build:css
 
-Watch SASS files for changes
-   npm run watch:sass
+Start the development server: npm run serve
 
-Start live development server
-   npm run devserver
+Compile SASS and serve at once (recommended): npm start
 
-Start everything (recommended)
-   npm start
-
-Notes:
-
-  This will:
-  Watch all .scss files
-  Automatically recompile CSS
-  Reload the browser on changes
+Note: This project is a completed frontend landing page. Watching for changes is not required, so the project will remain static as intended.
 
 
 ### 📦 package.json Scripts
 
-{
-  "scripts": {
-    "compile:sass": "node-sass sass/main.scss css/style.comp.css",
-    "watch:sass": "nodemon -e scss -x \"npm run compile:sass\"",
-    "devserver": "live-server",
-    "start": "npm-run-all --parallel watch:sass devserver"
-  }
+"scripts": {
+"build:css": "sass sass/main.scss css/style.comp.css",
+"serve": "live-server",
+"start": "npm run build:css && npm run serve"
 }
 
 ### 🧑‍🎓 Learning Purpose
@@ -130,5 +130,3 @@ Original design credit belongs to Jonas Schmedtmann
 ### License
 
 This project is for educational purposes only.
-
-
