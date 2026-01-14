@@ -33,13 +33,17 @@ This project does **not** use JavaScript frameworks and focuses entirely on **cl
 
 Make sure you have the following installed:
 
-  - Node.js (v16+ recommended)
+  - Make sure you have the following installed if running locally:
 
-  - npm (comes with Node.js)
+    Node.js (v16+ recommended)
 
-  - live-server (if you want to run it globally): npm install -g live-server
+    npm (comes with Node.js)
 
-  - npm-run-all (optional, only needed if using parallel scripts): npm install -g npm-run-all
+    live-server (if you want to run it globally): npm install -g live-server
+
+    npm-run-all (optional, only needed if using parallel scripts): npm install -g npm-run-all
+
+    Docker (optional, only needed if running via Docker)
 
 ---
 
@@ -104,10 +108,58 @@ Note: This project is a completed frontend landing page. Watching for changes is
 ### 📦 package.json Scripts
 
 "scripts": {
-"build:css": "sass sass/main.scss css/style.comp.css",
-"serve": "live-server",
-"start": "npm run build:css && npm run serve"
+  "build:css": "sass sass/main.scss css/style.comp.css",
+  "serve": "live-server",
+  "start": "npm run build:css && npm run serve"
 }
+
+### 🐳 Docker Support
+
+You can now run Natours entirely inside a Docker container, with no local Node.js installation required. The container builds the SASS and serves the project using live-server.
+
+```bash
+FROM node:20-alpine
+
+WORKDIR /app
+
+# Install dependencies
+COPY package.json package-lock.json* ./
+RUN npm install
+
+# Copy project files
+COPY . .
+
+# live-server default port
+EXPOSE 8080
+
+# Run build + serve
+CMD ["npm", "start"]
+```
+Running with Docker
+
+1️⃣ Build the Docker Image
+
+```bash
+docker build -t natours-frontend .
+```
+
+2️⃣ Run the Container
+
+```bash
+docker run -p 8080:8080 natours-frontend
+```
+
+3️⃣ Open in Browser
+
+```bash
+http://localhost:8080
+```
+
+Notes:
+
+Hot reloading is not enabled; the project is static.
+
+Live Server runs on port 8080 by default.
 
 ### 🧑‍🎓 Learning Purpose
 

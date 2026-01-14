@@ -1,9 +1,9 @@
 {
   "scripts": {
-    "build:css": "sass sass/main.scss css/style.comp.css",
-    "serve": "live-server",
-    "start": "npm run build:css && npm run serve"
-  },
+  "build:css": "sass sass/main.scss css/style.comp.css",
+  "serve": "live-server --host=0.0.0.0",
+  "start": "npm run build:css && npm run serve"
+},
   "devDependencies": {
     "live-server": "^1.2.2",
     "sass": "^1.97.2"
